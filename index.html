@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My shop</title>
+    <script src="./script.js" defer></script>
+    <link href="./style.css" type="text/css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- ELEMENTS -->
+    <template id="temp-card">
+      <style type="text/css">
+        :host div {
+          background: white;
+          border-radius: 5px;
+          border: 1px solid #555555;
+          width: 150px;
+          height: 200px;
+          padding: 10px;
+          display: inline-block;
+        }
+
+        :host img {
+          width: 50%;
+          margin: 10px auto;
+          display: block;
+          margin-bottom: 40px;
+        }
+
+        :host p {
+          margin: 5px 0;
+        }
+      </style>
+      <div>
+        <img src="./shopping-cart.png" />
+        <p>Название: <slot name="title"></slot></p>
+        <p>Цена: <slot name="price"></slot></p>
+        <p><button>Добавить в корзину</button></p>
+      </div>
+    </template>
+    <!-- ELEMENTS -->
+    <div class="shopping-cards"></div>
+    <div class="shopping-list-wrapper">
+      <h4>Список покупок</h4>
+      <ul class="shopping-list" id="shopping-list">
+      </ul>
+      <p>
+        Общая стоимость: <span id="shopping-list-total"></span>
+      </p>  
+    </div>
+  </body>
+</html>
